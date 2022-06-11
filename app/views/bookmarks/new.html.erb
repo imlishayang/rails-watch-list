@@ -1,8 +1,9 @@
-<h1>Create new bookmark</h1>
+<div class="container">
+<h1>Add new movie to your <%= @list.name %> list</h1>
 
-<%= simple_form_for [@list, @bookmark] do |f| %>
+<%= simple_form_for [ @list, @bookmark ] do |f| %>
   <%= f.input :comment %>
-  <%= f.association :list %>
   <%= f.association :movie %>
   <%= f.button :submit, class: "btn btn-primary" %> <%= link_to "Cancel", lists_path %>
 <% end %>
+</div>
