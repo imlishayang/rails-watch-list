@@ -1,4 +1,8 @@
 class ListsController < ApplicationController
+  def home
+    @list = List.new
+  end
+
   def index
     @lists = List.all
     @list = List.new

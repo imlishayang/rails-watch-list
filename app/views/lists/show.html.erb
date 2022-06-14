@@ -3,7 +3,6 @@
   <h1 class="show-name"><%= @list.name %></h1>
     <% @list.bookmarks.each do |bookmark| %>
       <h2><%= bookmark.movie.title %></h2>
-      <%=  image_tag "movie1.png", width: 200 %>
       <p><%= bookmark.movie.overview %></p>
       <p>Comments:</p>
       <%= bookmark.comment %>
