@@ -1,1 +1,28 @@
 // Specific CSS for your home-page
+.body {
+  background-color:#FFF2F2;
+
+}
+
+h1 {
+  font-size: 70px;
+}
+
+p {
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+
+.home-button {
+  background-color: #809A6F;
+  color: white;
+  padding: 10px 34px;
+  margin-top: 15px;
+  border-radius: 3px;
+
+  &:hover {
+    background-color: #8c9b81;
+    color:#46533d;
+
+  }
+}

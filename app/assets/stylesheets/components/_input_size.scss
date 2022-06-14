@@ -1,0 +1,31 @@
+#list_name {
+  width: 300px;
+  margin-top: 10px;
+}
+
+#new_list {
+  padding-top: 5px;
+  display: flex;
+  flex-direction: row;
+}
+
+.submit-list{
+  background-color: #809A6F;
+  color: white;
+  padding: 1px 20px;
+  margin-left: 9px;
+  border-radius: 3px;
+  font-family: 'Satisfy', cursive;
+  box-shadow: none;
+  font-size: 18px;
+  border-style: none;
+    &:hover{
+      color: #49613a;
+    }
+}
+
+.submit-container {
+  display: flex;
+  align-items: center;
+  justify-content: right;
+}
