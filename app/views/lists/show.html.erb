@@ -1,6 +1,6 @@
 
 <div class="container">
-  <h1><%= @list.name %></h1>
+  <h1 class="show-name"><%= @list.name %></h1>
     <% @list.bookmarks.each do |bookmark| %>
       <h2><%= bookmark.movie.title %></h2>
       <%=  image_tag "movie1.png", width: 200 %>
