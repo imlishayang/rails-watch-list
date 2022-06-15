@@ -5,3 +5,17 @@
     padding: 10px 34px;
     border-radius: 3px;
 }
+
+.home-button {
+  background-color: #809A6F;
+  color: white;
+  padding: 10px 34px;
+  margin-top: 15px;
+  border-radius: 3px;
+
+  &:hover {
+    background-color: #8c9b81;
+    color:#46533d;
+
+  }
+}

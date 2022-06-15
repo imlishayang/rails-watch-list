@@ -17,6 +17,7 @@
 
   </div> %>
   <div class="submit-container">
+  <%= link_to "Home", lists_path  %>
     <%= simple_form_for(@list) do |f| %>
           <%= f.input :name, class:"input-size", placeholder:" List name",  label: false %>
           <%= f.submit 'Add to list', class:"submit-list" %>

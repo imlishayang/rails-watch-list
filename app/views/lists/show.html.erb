@@ -1,22 +1,29 @@
 
 <div class="container">
-    <h1 class="show-name"><%= @list.name %></h1>
+    <h1 class="show-name"><%= @list.name.capitalize %></h1>
       <% @list.bookmarks.each do |bookmark| %>
+      <%# This pic is from API seed %>
+      <%= image_tag "https://image.tmdb.org/t/p/w500/#{bookmark.movie.poster_url}", class: "img-show" %>
         <h2 class="movie-name"><%= bookmark.movie.title %></h2>
         <p class="movie-overview"><%= bookmark.movie.overview %></p>
-        <p>Comments:</p>
+        <p>Comments+fav scenes:</p>
         <%= bookmark.comment %>
-        <p><%= link_to "Delete movie", bookmark_path(bookmark), method: :delete, data: { confirm: "Delete this movie from the list?"}, class:"home-button" %></p>
+        <%# cloudinary image user uploads %>
+        <%= cl_image_tag @bookmark.photo.key, height: 300, width: 400, crop: :fill %>
+        <p><%= link_to "Delete movie", bookmark_path(bookmark), method: :delete, data: { confirm: "Delete this movie from the list?"}, class:"delete-button" %></p>
   <hr>
   <% end %>
 <h3 class="new-section" >Add new movie to your list</h3>
 
-<%= simple_form_for [ @list, @bookmark ] do |f| %>
-  <%= f.association :movie %>
-  <%= f.input :comment %>
-  <%= f.button :submit, class: "btn btn-primary" %> <%= link_to "Cancel", lists_path %>
-<% end %>
 
-    <%= link_to "Back to home page", lists_path  %>
+
+
+<%= simple_form_for [ @list, @bookmark ] do |f| %>
+  <%= f.association :movie, prompt: "Please Select",  label: false %>
+  <%= f.input :comment, placeholder:"Comment ",  label: false %>
+  <%= f.input :photo, as: :file %>
+  <%= f.button :submit, class: "home-button" %>
+  <p><%= link_to "Cancel", lists_path, class:"home-button" %></p>
+<% end %>
 
 </div>
