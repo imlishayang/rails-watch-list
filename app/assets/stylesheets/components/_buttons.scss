@@ -21,7 +21,11 @@
 }
 
 .show-delete-button {
-  color: white;
+  margin-left: 15px;
+  font-size: 14px;
+  text-decoration: none;
+  font-family: 'Quicksand', sans-serif;
+  color: #8c9b81;
   &:hover {
     color:#46533d;
   }
