@@ -25,7 +25,7 @@
   font-size: 14px;
   text-decoration: none;
   font-family: 'Quicksand', sans-serif;
-  color: #8c9b81;
+  color: #f4f4f4;
   &:hover {
     color:#46533d;
   }
@@ -36,4 +36,16 @@
   &:hover {
     color:#46533d;
   }
+}
+
+
+.upload-button {
+  border: none;
+  background-color: none;
+  font-size: 16px;
+  color:#809A6F;
+  &:hover {
+    color:#46533d;
+  }
+
 }

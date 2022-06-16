@@ -12,11 +12,12 @@
           </div>
 
           <div class="flip-card-back">
-            <h2 class="show-card-title"><%= bookmark.movie.title %></h2>
+            <h2 class="show-card-title"><%= bookmark.movie.title %> <%= link_to "X", bookmark_path(bookmark), method: :delete, data: { confirm: "Are you sure you want to delete this movie?"}, class:"show-delete-button" %></h2>
+
+            <p>Rating:<%= bookmark.movie.rating %>/10</p>
             <p class="movie-overview"><%= bookmark.movie.overview %></p>
             <p class="show-comment">Comment:</p>
             <p class="user-show-comment"><%= bookmark.comment %></p>
-            <p><%= link_to "Delete movie", bookmark_path(bookmark), method: :delete, data: { confirm: "Delete this movie from the list?"}, class:"show-delete-button" %></p>
           </div>
 
         </div>

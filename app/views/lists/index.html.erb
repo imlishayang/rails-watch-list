@@ -4,10 +4,18 @@
 <div class="container">
   <div class="cards">
     <% @lists.each do |list| %>
-        <div class="card-category">
-            <%= link_to list_path(list) do %>
-            <%= list.name %> <%= link_to "(X)", list_path(list), method: :delete, data: { confirm: "Are you sure you want to delete this list?"} %>
+        <div class="list-card-category">
+          <%= link_to list_path(list) do %>
+            <h1></h1><%= list.name %></h1> <%= link_to "(X)", list_path(list), method: :delete, data: { confirm: "Are you sure you want to delete this list?"} %>
+
+
+
+             <%# <%= simple_form_for(@list) do |f| %>
+              <%# <%= f.input :photo, as: :file, label: false %>
+              <%# f.submit 'Upload',class:"upload-button" %>
+             <%# end %>
           <% end %>
+
         </div>
     <% end %>
   </div>

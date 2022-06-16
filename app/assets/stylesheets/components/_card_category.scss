@@ -18,6 +18,28 @@
   }
 }
 
+.list-card-category {
+  background-size: cover;
+  background-position: center;
+  height: 180px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  border-radius: 5px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+
+  a {
+    color: #6D8B74;
+    font-family: 'Quicksand', sans-serif;
+  }
+
+}
+
 .card-category-show {
   background-size: cover;
   background-position: center;
@@ -88,7 +110,7 @@
 }
 
 .show-card-title {
-  font-size: 24px;
+  font-size: 22px;
   text-align: center;
   padding:10px;
   background-color: #8c9e90;
@@ -113,7 +135,7 @@
 .user-show-comment {
   text-align: left;
   margin-left: 8px;
-  margin-bottom: 120px;
+  margin-bottom: 20px;
   font-size: 14px;
   color: #46533d;
 }
