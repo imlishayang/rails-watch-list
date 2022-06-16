@@ -21,7 +21,7 @@
 .list-card-category {
   background-size: cover;
   background-position: center;
-  height: 180px;
+  height: 200px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -38,6 +38,10 @@
     font-family: 'Quicksand', sans-serif;
   }
 
+}
+
+.list-card-category:hover {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
 }
 
 .card-category-show {
