@@ -19,3 +19,17 @@
 
   }
 }
+
+.show-delete-button {
+  color: white;
+  &:hover {
+    color:#46533d;
+  }
+}
+
+.cancel-button {
+  color:#809A6F;
+  &:hover {
+    color:#46533d;
+  }
+}

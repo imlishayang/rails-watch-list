@@ -12,18 +12,20 @@
 
   <body>
   <div id="navbar">
-  <%# <a href="#home">Home</a>
-  <div class="search-container">
+    <div class="submit-container">
+      <ul>
+        <li><%= link_to "Home", lists_path  %></li>
 
-  </div> %>
-  <div class="submit-container">
-  <%= link_to "Home", lists_path  %>
-    <%= simple_form_for(@list) do |f| %>
+        <li> <%= simple_form_for(@list) do |f| %>
           <%= f.input :name, class:"input-size", placeholder:" List name",  label: false %>
           <%= f.submit 'Add to list', class:"submit-list" %>
-        <% end %>
-        </div>
+          <% end %>
+        </li>
+      </ul>
     </div>
+  </div>
+
+
 
     <%= yield %>
   </body>

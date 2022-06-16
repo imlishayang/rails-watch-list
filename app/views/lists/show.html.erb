@@ -1,29 +1,41 @@
 
+LETS TRY FLIP
+<h1 class="show-page-title"><%= @list.name.capitalize %></h1>
 <div class="container">
-    <h1 class="show-name"><%= @list.name.capitalize %></h1>
-      <% @list.bookmarks.each do |bookmark| %>
-      <%# This pic is from API seed %>
-      <%= image_tag "https://image.tmdb.org/t/p/w500/#{bookmark.movie.poster_url}", class: "img-show" %>
-        <h2 class="movie-name"><%= bookmark.movie.title %></h2>
-        <p class="movie-overview"><%= bookmark.movie.overview %></p>
-        <p>Comments+fav scenes:</p>
-        <%= bookmark.comment %>
-        <%# cloudinary image user uploads %>
-        <%= cl_image_tag @bookmark.photo.key, height: 300, width: 400, crop: :fill %>
-        <p><%= link_to "Delete movie", bookmark_path(bookmark), method: :delete, data: { confirm: "Delete this movie from the list?"}, class:"delete-button" %></p>
-  <hr>
-  <% end %>
-<h3 class="new-section" >Add new movie to your list</h3>
+  <div class="container">
+    <div class="cards">
+     <% @list.bookmarks.each do |bookmark| %>
+      <div class="flip-card">
+        <div class="flip-card-inner">
+
+          <div class="flip-card-front">
+            <%= image_tag "https://image.tmdb.org/t/p/w200/#{bookmark.movie.poster_url}", class: "img-show" %>
+          </div>
+
+          <div class="flip-card-back">
+            <h2 class="show-card-title"><%= bookmark.movie.title %></h2>
+            <p class="movie-overview"><%= bookmark.movie.overview %></p>
+            <p class="show-comment">Comment:</p>
+            <p class="user-show-comment"><%= bookmark.comment %></p>
+            <p><%= link_to "Delete movie", bookmark_path(bookmark), method: :delete, data: { confirm: "Delete this movie from the list?"}, class:"show-delete-button" %></p>
+          </div>
+
+        </div>
+      </div>
+      <% end %>
+    </div>
+  </div>
 
 
 
-
-<%= simple_form_for [ @list, @bookmark ] do |f| %>
+  <h3 class="new-section" >Add new movie to your list</h3>
+  <%= simple_form_for [ @list, @bookmark ] do |f| %>
   <%= f.association :movie, prompt: "Please Select",  label: false %>
   <%= f.input :comment, placeholder:"Comment ",  label: false %>
-  <%= f.input :photo, as: :file %>
+  <%# <%= f.input :photo, as: :file %>
   <%= f.button :submit, class: "home-button" %>
-  <p><%= link_to "Cancel", lists_path, class:"home-button" %></p>
+  <p><%= link_to "Cancel", lists_path, class:"cancel-button" %></p>
 <% end %>
 
+</div>
 </div>
